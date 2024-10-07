@@ -1,23 +1,26 @@
 coins: 1 2 4 8 16 32 64 128 256
 
 value: 10
+greddy: 
 8: 1
 2: 1
+time(seconds): 2.416e-06
 
-
-value: 20
-16: 1
-4: 1
-
-
-value: 255
-128: 1
-64: 1
-32: 1
-16: 1
-8: 1
-4: 1
+permutation: 
 2: 1
-1: 1
+8: 1
+time(seconds): 1.74567
 
+coins: 1 5 10 15 20 25
+
+value: 19
+greddy: 
+15: 1
+1: 4
+time(seconds): 4.871e-06
+
+permutation: 
+1: 4
+15: 1
+time(seconds): 0.28707
 

@@ -1,15 +1,17 @@
 #include <set>
 #include <string>
-#include <regex>
+#include <algorithm>
 
 class Coins {
 
     private:
         std::set<int> coins;
+        std::vector<int> getPermutationVector(int val);
 
     public:
         void setCoinsSet(std::set<int> coinsSet);
-        std::string getResp(int val);
+        std::string greedy(int val);
+        std::string permutate(int k);
         Coins();
         ~Coins();
 };

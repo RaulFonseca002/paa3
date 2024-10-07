@@ -2,6 +2,9 @@
 #include <fstream>
 #include <regex>
 #include <vector>
+#include <chrono>
+#include <chrono>
+
 
 std::set<int> getSet(std::string str){
 
@@ -30,6 +33,8 @@ int main(int argc, char const *argv[]) {
     std::regex re("([0-9 ]+);([0-9 ]+)");
     std::smatch match;
 
+    std::chrono::high_resolution_clock::time_point start, end;
+    std::chrono::duration<double> duration;
 
     while(getline(inputFile, input)){
 
@@ -43,7 +48,24 @@ int main(int argc, char const *argv[]) {
 
         for(int c : respSet){
             outputFile << "value: " << c << "\n";
-            outputFile << coins.getResp(c) << "\n\n";
+
+            outputFile << "greddy: " << "\n";
+
+            start = std::chrono::high_resolution_clock::now();
+            outputFile << coins.greedy(c);
+            end = std::chrono::high_resolution_clock::now();
+
+            duration = end - start;
+            outputFile << "time(seconds): " << duration.count() << "\n\n";
+
+            outputFile << "permutation: " << "\n";
+
+            start = std::chrono::high_resolution_clock::now();
+            outputFile << coins.permutate(c);
+            end = std::chrono::high_resolution_clock::now();
+
+            duration = end - start;
+            outputFile << "time(seconds): " << duration.count() << "\n\n";
         }
 
     }
